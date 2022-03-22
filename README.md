@@ -1,5 +1,10 @@
-# solution-sprint-fase4-grupo7
+# Solution Sprint Fase 4 Grupo 7
 Solution Sprint da Fase 4 - Containerization Strategy
+
+#Integrantes:
+Kaique Ferreira Fonseca
+Jhones André Alves da Fraga
+Jonatas Batista de Oliveira Santana
 
 # Entrega 1
 - Dockerfile: O arquivo Dockerfile presente na raíz
