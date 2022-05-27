@@ -1,0 +1,62 @@
+kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+    template.openshift.io/expose-uri: 'postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}'
+  selfLink: /api/v1/namespaces/fiap-grupo7-rm341751/services/sample-db-grupo7-rm341751
+  resourceVersion: '33796163'
+  name: sample-db-grupo7-rm341751
+  uid: 2deceb57-8905-4132-a504-3c61652a85bd
+  creationTimestamp: '2022-03-21T22:00:20Z'
+  managedFields:
+    - manager: oc
+      operation: Update
+      apiVersion: v1
+      time: '2022-03-21T22:00:20Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:openshift.io/generated-by': {}
+            'f:template.openshift.io/expose-uri': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:template': {}
+        'f:spec':
+          'f:ports':
+            .: {}
+            'k:{"port":5432,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector':
+            .: {}
+            'f:name': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+  namespace: fiap-grupo7-rm341751
+  labels:
+    app: db-grupo7-rm341751
+    app.kubernetes.io/component: db-grupo7-rm341751
+    app.kubernetes.io/instance: db-grupo7-rm341751
+    template: postgresql-persistent-template
+spec:
+  ports:
+    - name: postgresql
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    name: sample-db-grupo7-rm341751
+  clusterIP: 172.30.21.193
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

@@ -1,0 +1,75 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  selfLink: >-
+    /apis/route.openshift.io/v1/namespaces/fiap-grupo7-rm341751/routes/blog-django-grupo7-rm341751-py
+  resourceVersion: '33784498'
+  name: blog-django-grupo7-rm341751-py
+  uid: 0b195750-3537-4f11-914d-93d2e9b57dd4
+  creationTimestamp: '2022-03-21T21:47:09Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2022-03-21T21:47:09Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2022-03-21T21:47:09Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+  namespace: fiap-grupo7-rm341751
+  labels:
+    app: blog-django-grupo7-rm341751-py
+    app.kubernetes.io/component: blog-django-grupo7-rm341751-py
+    app.kubernetes.io/instance: blog-django-grupo7-rm341751-py
+    app.kubernetes.io/name: python
+    app.kubernetes.io/part-of: blog-django-py-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  host: >-
+    blog-django-grupo7-rm341751-py-fiap-grupo7-rm341751.apps.na46.prod.nextcle.com
+  to:
+    kind: Service
+    name: blog-django-grupo7-rm341751-py
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: >-
+        blog-django-grupo7-rm341751-py-fiap-grupo7-rm341751.apps.na46.prod.nextcle.com
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2022-03-21T21:47:09Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: apps.na46.prod.nextcle.com
